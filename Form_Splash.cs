@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DriversData_PC
 {
-    public partial class Form1 : Form
+    public partial class Form_Splash : Form
     {
-        public Form1()
+        public Form_Splash()
         {
             InitializeComponent();
+        }
+
+        private void Form_Splash_Shown(object sender, EventArgs e)
+        {
+            //check for updates with the version number on the server
         }
     }
 }
