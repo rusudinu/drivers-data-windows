@@ -29,35 +29,38 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Register));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.autenthicateWithGoogleButton = new System.Windows.Forms.Button();
+            this.autenthicateWithCodingShadowsAccountButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.registerWithACodingShadowsAccountButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // autenthicateWithGoogleButton
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(112, 249);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(315, 41);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Authenticate with Google";
-            this.button1.UseVisualStyleBackColor = false;
+            this.autenthicateWithGoogleButton.BackColor = System.Drawing.Color.White;
+            this.autenthicateWithGoogleButton.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autenthicateWithGoogleButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.autenthicateWithGoogleButton.Location = new System.Drawing.Point(112, 225);
+            this.autenthicateWithGoogleButton.Name = "autenthicateWithGoogleButton";
+            this.autenthicateWithGoogleButton.Size = new System.Drawing.Size(315, 41);
+            this.autenthicateWithGoogleButton.TabIndex = 0;
+            this.autenthicateWithGoogleButton.Text = "Authenticate with Google";
+            this.autenthicateWithGoogleButton.UseVisualStyleBackColor = false;
+            this.autenthicateWithGoogleButton.Click += new System.EventHandler(this.autenthicateWithGoogleButton_Click);
             // 
-            // button2
+            // autenthicateWithCodingShadowsAccountButton
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(57, 305);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(417, 41);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Autenthicate with CodingShadows account";
-            this.button2.UseVisualStyleBackColor = false;
+            this.autenthicateWithCodingShadowsAccountButton.BackColor = System.Drawing.Color.White;
+            this.autenthicateWithCodingShadowsAccountButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autenthicateWithCodingShadowsAccountButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.autenthicateWithCodingShadowsAccountButton.Location = new System.Drawing.Point(58, 272);
+            this.autenthicateWithCodingShadowsAccountButton.Name = "autenthicateWithCodingShadowsAccountButton";
+            this.autenthicateWithCodingShadowsAccountButton.Size = new System.Drawing.Size(417, 41);
+            this.autenthicateWithCodingShadowsAccountButton.TabIndex = 1;
+            this.autenthicateWithCodingShadowsAccountButton.Text = "Autenthicate with CodingShadows account";
+            this.autenthicateWithCodingShadowsAccountButton.UseVisualStyleBackColor = false;
+            this.autenthicateWithCodingShadowsAccountButton.Click += new System.EventHandler(this.autenthicateWithCodingShadowsAccountButton_Click);
             // 
             // pictureBox1
             // 
@@ -71,6 +74,19 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // registerWithACodingShadowsAccountButton
+            // 
+            this.registerWithACodingShadowsAccountButton.BackColor = System.Drawing.Color.White;
+            this.registerWithACodingShadowsAccountButton.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerWithACodingShadowsAccountButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.registerWithACodingShadowsAccountButton.Location = new System.Drawing.Point(58, 319);
+            this.registerWithACodingShadowsAccountButton.Name = "registerWithACodingShadowsAccountButton";
+            this.registerWithACodingShadowsAccountButton.Size = new System.Drawing.Size(417, 41);
+            this.registerWithACodingShadowsAccountButton.TabIndex = 3;
+            this.registerWithACodingShadowsAccountButton.Text = "Register with CodingShadows account";
+            this.registerWithACodingShadowsAccountButton.UseVisualStyleBackColor = false;
+            this.registerWithACodingShadowsAccountButton.Click += new System.EventHandler(this.registerWithACodingShadowsAccountButton_Click);
+            // 
             // Form_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,9 +94,10 @@
             this.BackgroundImage = global::DriversData_PC.Properties.Resources.bus_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(528, 643);
+            this.Controls.Add(this.registerWithACodingShadowsAccountButton);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.autenthicateWithCodingShadowsAccountButton);
+            this.Controls.Add(this.autenthicateWithGoogleButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Register";
@@ -93,8 +110,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button autenthicateWithGoogleButton;
+        private System.Windows.Forms.Button autenthicateWithCodingShadowsAccountButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button registerWithACodingShadowsAccountButton;
     }
 }

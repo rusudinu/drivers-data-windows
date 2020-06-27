@@ -16,5 +16,24 @@ namespace DriversData_PC
         {
             InitializeComponent();
         }
+
+        private void autenthicateWithGoogleButton_Click(object sender, EventArgs e)
+        {
+            //todo this later
+        }
+
+        private void autenthicateWithCodingShadowsAccountButton_Click(object sender, EventArgs e)
+        {
+            Form autenthicateForm = new Form_Autenthicate();
+            autenthicateForm.Show();
+            this.Close();
+        }
+
+        private void registerWithACodingShadowsAccountButton_Click(object sender, EventArgs e)
+        {
+            Form registerWithCodingShadowsAccountForm = new Form_RegisterCodingShadowsAccount();
+            registerWithCodingShadowsAccountForm.Show();
+            this.Close();
+        }
     }
 }
