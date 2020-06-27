@@ -1,40 +1,40 @@
 ﻿using Amazon.CognitoIdentityProvider;
-using Amazon.CognitoIdentityProvider.Model;
 using Amazon.Extensions.CognitoAuthentication;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DriversData_PC
 {
     class Class_HandleUserLogin
     {
-        private const string AppClientID = "6cq53ibq8n87rb74mchjgq2ujr";
-        private const string PoolID = "eu-central-1_ywexUpwet";
+        private const string AppClientID = "5io11b2juq6rm4000rf56tup1";
+        private const string PoolID = "eu-central-1_LZITFfCAz";
         private static Amazon.RegionEndpoint Region = Amazon.RegionEndpoint.EUCentral1;
-
-        private readonly byte[] plainTextPassword;
-        private readonly byte[] plainTextUsername;
-        private readonly bool saveCredentials;
 
         private byte[] retrievedEncodedPassword;
         private byte[] retrievedEncodedUsername;
 
-        Class_HandleUserLogin(byte[] password, byte[] username, bool save_credentials)
+        /*
+         * 
+         * Class_HandleUserLogin(byte[] password, byte[] username, bool save_credentials)
         {
             this.plainTextPassword = password;
             this.plainTextUsername = username;
             this.saveCredentials = save_credentials;
         }
+         * 
+         */
 
-        void autenthicateTheUser()
+
+        public void AutenthicateTheUser()
         {
-            if (checkForSavedCredentials())
+            if (CheckForSavedCredentials())
             {
+                Console.WriteLine("saved credentials returned true");
                 byte[] entropy = new byte[20];
                 using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
                 {
@@ -47,33 +47,18 @@ namespace DriversData_PC
                 string plainTextUsernameAfterDecodeString = Encoding.Default.GetString(plaintextUsernameAfterDecode);
                 string plainTextPasswordAfterDecodeString = Encoding.Default.GetString(plaintextPasswordAfterDecode);
 
-                if (autenthicateTheUserInCognitoAsync(plainTextUsernameAfterDecodeString, plainTextPasswordAfterDecodeString))
-                {
-                    showDashboardForm();
-                }
-                else
-                {
-                    showLoginRegisterForm();
-                }
+                LoginUser(plainTextUsernameAfterDecodeString, plainTextPasswordAfterDecodeString).Wait();
             }
             else
             {
-                showLoginRegisterForm();
+                Console.WriteLine("showing the login register form - the saved credentials returned false");
+                ShowLoginRegisterForm();
             }
         }
 
-        private void showLoginRegisterForm()
+        async Task LoginUser(string username, string password)
         {
-
-        }
-
-        private void showDashboardForm()
-        {
-
-        }
-
-        private async Task<bool> autenthicateTheUserInCognitoAsync(string username, string password)
-        {
+            Console.WriteLine("atemtping to log the user in");
             AmazonCognitoIdentityProviderClient provider = new AmazonCognitoIdentityProviderClient(new Amazon.Runtime.AnonymousAWSCredentials(), Region);
 
             CognitoUserPool pool = new CognitoUserPool(PoolID, AppClientID, provider);
@@ -86,11 +71,35 @@ namespace DriversData_PC
             {
                 authResponse = await user.StartWithSrpAuthAsync(authRequest).ConfigureAwait(false);
             }
-            catch (Exception e) { Console.WriteLine(e.ToString()); }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
 
-            GetUserRequest getUserRequest = new GetUserRequest();
-            getUserRequest.AccessToken = authResponse.AuthenticationResult.AccessToken;
-            return false;
+            if (authResponse.AuthenticationResult != null)
+            {
+                Console.WriteLine("auth response was not null");
+                ShowDashboardForm();
+            }
+            else
+            {
+                Console.WriteLine("auth response was null");
+                ShowLoginRegisterForm();
+            }
+        }
+
+        private void ShowLoginRegisterForm()
+        {
+            Console.WriteLine("Showing login regsiter form");
+            Form registerForm = new Form_Register();
+            registerForm.Show();
+        }
+
+        private void ShowDashboardForm()
+        {
+            Console.WriteLine("Showing dashboard form");
+            Form dashboardForm = new Form_Dashboard();
+            dashboardForm.Show();
         }
 
         /*
@@ -99,7 +108,7 @@ namespace DriversData_PC
          * if not, then prompts the user to autenthicate
          * 
          */
-        bool checkForSavedCredentials()
+        bool CheckForSavedCredentials()
         {
             if (File.Exists(Class_AppFiles.savedCredentialsHiddenFile))
             {
@@ -118,7 +127,7 @@ namespace DriversData_PC
             else return false;
         }
 
-        static void saveEncryptedCredentials(byte[] encryptedUsername, byte[] encryptedPassword)
+        static void SaveEncryptedCredentials(byte[] encryptedUsername, byte[] encryptedPassword)
         {
             DirectoryInfo di = Directory.CreateDirectory(Class_AppFiles.savedCredentialsHiddenFolder);
             di.Attributes = FileAttributes.Directory | FileAttributes.Hidden;
@@ -147,7 +156,7 @@ namespace DriversData_PC
 
         }
 
-        void function()
+        void Function()
         {
             // Data to protect. Convert a string to a byte[] using Encoding.UTF8.GetBytes(). byte[] plaintext = Encoding.UTF8.GetBytes(password);
 
@@ -159,11 +168,11 @@ namespace DriversData_PC
             }
 
             //encode
-            byte[] cipherTextUsername = ProtectedData.Protect(plainTextUsername, entropy, DataProtectionScope.CurrentUser);
-            byte[] cipherTextPassword = ProtectedData.Protect(plainTextPassword, entropy, DataProtectionScope.CurrentUser);
+            //byte[] cipherTextUsername = ProtectedData.Protect(plainTextUsername, entropy, DataProtectionScope.CurrentUser);
+            //byte[] cipherTextPassword = ProtectedData.Protect(plainTextPassword, entropy, DataProtectionScope.CurrentUser);
 
             //save cipherTextUsername and cipherTextPassword into a hidden file or smth
-            if (saveCredentials) saveEncryptedCredentials(cipherTextUsername, cipherTextPassword);
+            //if (saveCredentials) SaveEncryptedCredentials(cipherTextUsername, cipherTextPassword);
 
 
             //decode

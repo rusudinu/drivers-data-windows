@@ -1,6 +1,6 @@
 ﻿namespace DriversData_PC
 {
-    partial class Form_MainForm
+    partial class Form_Register
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form_MainForm";
+            this.Text = "Form_Register";
         }
 
         #endregion

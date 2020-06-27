@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DriversData_PC
 {
-    public partial class Form_MainForm : Form
+    public partial class Form_Register : Form
     {
-        public Form_MainForm()
+        public Form_Register()
         {
             InitializeComponent();
         }

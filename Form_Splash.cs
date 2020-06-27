@@ -31,8 +31,11 @@ namespace DriversData_PC
                 //Begin loading
                 //Log the user in if it is possible
                 this.Hide();
-                Form formMainForm = new Form_MainForm();
-                formMainForm.ShowDialog();
+                Class_HandleUserLogin class_HandleUserLogin = new Class_HandleUserLogin();
+                class_HandleUserLogin.AutenthicateTheUser();
+
+                //Form formMainForm = new Form_MainForm();
+                //formMainForm.ShowDialog();
             }
         }
     }
