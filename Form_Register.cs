@@ -35,5 +35,41 @@ namespace DriversData_PC
             registerWithCodingShadowsAccountForm.Show();
             this.Close();
         }
+
+        private void autenthicateWithGoogleButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            autenthicateWithGoogleButton.BackColor = Color.FromArgb(0, 0, 64);
+            autenthicateWithGoogleButton.ForeColor = Color.White;
+        }
+
+        private void autenthicateWithGoogleButton_MouseLeave(object sender, EventArgs e)
+        {
+            autenthicateWithGoogleButton.BackColor = Color.White;
+            autenthicateWithGoogleButton.ForeColor = Color.FromArgb(0, 0, 64);
+        }
+
+        private void autenthicateWithCodingShadowsAccountButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            autenthicateWithCodingShadowsAccountButton.BackColor = Color.FromArgb(0, 0, 64);
+            autenthicateWithCodingShadowsAccountButton.ForeColor = Color.White;
+        }
+
+        private void autenthicateWithCodingShadowsAccountButton_MouseLeave(object sender, EventArgs e)
+        {
+            autenthicateWithCodingShadowsAccountButton.BackColor = Color.White;
+            autenthicateWithCodingShadowsAccountButton.ForeColor = Color.FromArgb(0, 0, 64);
+        }
+
+        private void registerWithACodingShadowsAccountButton_MouseMove(object sender, MouseEventArgs e)
+        {
+            registerWithACodingShadowsAccountButton.BackColor = Color.FromArgb(0, 0, 64);
+            registerWithACodingShadowsAccountButton.ForeColor = Color.White;
+        }
+
+        private void registerWithACodingShadowsAccountButton_MouseLeave(object sender, EventArgs e)
+        {
+            registerWithACodingShadowsAccountButton.BackColor = Color.White;
+            registerWithACodingShadowsAccountButton.ForeColor = Color.FromArgb(0, 0, 64);
+        }
     }
 }
