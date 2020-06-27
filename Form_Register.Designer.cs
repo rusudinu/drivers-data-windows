@@ -44,7 +44,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(315, 41);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Autenthicate with Google";
+            this.button1.Text = "Authenticate with Google";
             this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
