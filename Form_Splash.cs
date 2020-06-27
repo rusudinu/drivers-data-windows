@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,9 +31,12 @@ namespace DriversData_PC
             {
                 //Begin loading
                 //Log the user in if it is possible
-                this.Hide();
+
+
                 Class_HandleUserLogin class_HandleUserLogin = new Class_HandleUserLogin();
                 class_HandleUserLogin.AutenthicateTheUser();
+                this.Hide();
+                
 
                 //Form formMainForm = new Form_MainForm();
                 //formMainForm.ShowDialog();

@@ -88,6 +88,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Dashboard.resx">
+      <DependentUpon>Form_Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Register.resx">
+      <DependentUpon>Form_Register.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Splash.resx">
       <DependentUpon>Form_Splash.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -118,6 +125,21 @@
     <Analyzer Include="packages\AWSSDK.CognitoIdentity.3.3.101.104\analyzers\dotnet\cs\AWSSDK.CognitoIdentity.CodeAnalysis.dll" />
     <Analyzer Include="packages\AWSSDK.CognitoIdentityProvider.3.3.111\analyzers\dotnet\cs\AWSSDK.CognitoIdentityProvider.CodeAnalysis.dll" />
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.3.105.22\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bus_background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powered by codingshadows one line white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powered by codingshadows one line with logo copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powered by codingshadows one line with logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\powered by codingshadows one line.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
