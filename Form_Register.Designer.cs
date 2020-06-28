@@ -33,6 +33,7 @@
             this.autenthicateWithCodingShadowsAccountButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.registerWithACodingShadowsAccountButton = new System.Windows.Forms.Button();
+            this.closeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,6 +100,21 @@
             this.registerWithACodingShadowsAccountButton.MouseLeave += new System.EventHandler(this.registerWithACodingShadowsAccountButton_MouseLeave);
             this.registerWithACodingShadowsAccountButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.registerWithACodingShadowsAccountButton_MouseMove);
             // 
+            // closeLabel
+            // 
+            this.closeLabel.AutoSize = true;
+            this.closeLabel.BackColor = System.Drawing.Color.Transparent;
+            this.closeLabel.Font = new System.Drawing.Font("Verdana", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLabel.ForeColor = System.Drawing.Color.White;
+            this.closeLabel.Location = new System.Drawing.Point(12, 9);
+            this.closeLabel.Name = "closeLabel";
+            this.closeLabel.Size = new System.Drawing.Size(68, 23);
+            this.closeLabel.TabIndex = 4;
+            this.closeLabel.Text = "Close";
+            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
+            this.closeLabel.MouseLeave += new System.EventHandler(this.closeLabel_MouseLeave);
+            this.closeLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.closeLabel_MouseMove);
+            // 
             // Form_Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +122,7 @@
             this.BackgroundImage = global::DriversData_PC.Properties.Resources.bus_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(528, 643);
+            this.Controls.Add(this.closeLabel);
             this.Controls.Add(this.registerWithACodingShadowsAccountButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.autenthicateWithCodingShadowsAccountButton);
@@ -117,6 +134,7 @@
             this.Text = "Form_Register";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,5 +144,6 @@
         private System.Windows.Forms.Button autenthicateWithCodingShadowsAccountButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button registerWithACodingShadowsAccountButton;
+        private System.Windows.Forms.Label closeLabel;
     }
 }

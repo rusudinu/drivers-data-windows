@@ -71,5 +71,20 @@ namespace DriversData_PC
             registerWithACodingShadowsAccountButton.BackColor = Color.White;
             registerWithACodingShadowsAccountButton.ForeColor = Color.FromArgb(0, 0, 64);
         }
+
+        private void closeLabel_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void closeLabel_MouseMove(object sender, MouseEventArgs e)
+        {
+            closeLabel.ForeColor = Color.FromArgb(0, 0, 64);
+        }
+
+        private void closeLabel_MouseLeave(object sender, EventArgs e)
+        {
+            closeLabel.ForeColor = Color.White;
+        }
     }
 }
