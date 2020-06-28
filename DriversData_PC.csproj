@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon_white.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AWSSDK.CognitoIdentity, Version=3.3.0.0, Culture=neutral, PublicKeyToken=885c28607f98e604, processorArchitecture=MSIL">
       <HintPath>packages\AWSSDK.CognitoIdentity.3.3.101.104\lib\net45\AWSSDK.CognitoIdentity.dll</HintPath>
@@ -152,6 +155,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\powered by codingshadows one line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon_white.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
